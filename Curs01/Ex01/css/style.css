@@ -3,6 +3,7 @@ body {
 }
 
 .box {
+  display: block;
   width: 150px;
   height: 150px;
   margin: 25px;
@@ -30,17 +31,120 @@ body {
   background-color: lightpink;
 }
 
+/* Schimba textul casutei 4 in rosu pentru rezolutiile mai mari de 992px */
+.box-4 {
+  color: red;
+}
+
+.heading,
+.heading-2,
+.heading-3 {
+  display: none;
+}
+
+.heading-3::before {
+  content: "";
+  display: block;
+  clear: left;
+}
 
 @media (max-width: 576px) {
-
+  /* Ascunde folosind proprietatea display casuta 2 pe rezolutiile mai mici de 576 */
+  .box-2 {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
-
+  /* Schimba bordura casutei 3 in verde pentru rezolutiile mai mici de 768 */
+  .box-3 {
+    border-color: green;
+  }
+  /* Coloreaza textul casutei 5 alb pe rezolutiile mai mici de 768px */
+  .box-5 {
+    color: #fff;
+  }
 }
 
 @media (max-width: 992px) {
+  /* Ascunde casuta 4 pe rezolutiile mai mici de 992px */
+  .box-4 {
+    display: none;
+  }
+  /* Ascunde casuta 3 pentru rezolutiile mai mici de 992px  */
+  .box-3 {
+    display: none;
+  }
 
+  .box-4 {
+    color: black;
+  }
 }
 
+/* Adauga un media query pentru rezolutiile de pana in 1200px */
+@media (max-width: 1200px) {
+  /* Ascunde casuta 5 pe rezolutiile mai mici de 1200px */
+  .box-5 {
+    display: none;
+  }
+}
 
+/* Adauga un media query care sa se aplice intre 600px si 1200 de px */
+@media (min-width: 600px) and (max-width: 1200px) {
+  /* Adauga un element h1 in document, deasupra casutelor si afiseaza-l doar intre 600px si 1200px */
+  .heading {
+    display: block;
+  }
+}
+
+/* 12.Ascunde casuta 1 pentru rezolutiile mai mici de 576px */
+@media (max-width: 575px) {
+  .box-1 {
+    display: none;
+  }
+}
+
+/* 13.Coloreaza bordura si textul casutei 2 albe pentru rezolutiile de pana in 992 */
+@media (max-width: 991px) {
+  .box-2 {
+    border-color: white;
+    color: white;
+  }
+}
+
+/* 14.Adauga un element h2 deasupra casutelor si afiseaza-l intre rezolutiile de 500px si 100px */
+@media (min-width: 100px) and (max-width: 500px) {
+  .heading-2 {
+    display: block;
+  }
+}
+
+/* 15.Micsoreaza la 15 paddingul de pe elementul body pentru rezolutiile de sub 576px  */
+
+@media (max-width: 575px) {
+  body {
+    padding: 15px;
+  }
+}
+
+/* 16.Creeaza un element h3 sub casute si afiseaza-l pentru rezolutiile
+MAI MARI de 576px (min-width) */
+@media (min-width: 576px) {
+  .heading-3 {
+    display: block;
+  }
+}
+
+/* 17. Coloreaza rosu acest nou element pentru rezolutiile mai mari de 1000px  */
+@media (min-width: 1001px) {
+  .heading-3 {
+    color: red;
+  }
+}
+
+/* 18.Ascunde din nou elementul nou pentru rezolutiile mai mari de 1200px */
+@media (min-width: 1201px) {
+  .heading-3 {
+    display: none;
+  }
+}
